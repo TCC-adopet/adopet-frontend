@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "@marko/run-adapter-netlify": "^0.1.6",
+    "@marko/run-adapter-static": "^0.1.5",
     "marko": "^5.25.16"
   },
   "devDependencies": {
