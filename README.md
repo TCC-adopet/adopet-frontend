@@ -1,23 +1,19 @@
-# Thanks for checking out Marko
+# Adopet Frontend
 
-# Installation
+This project is powered by [@marko/run](https//github.com/marko-js/run).  
+
+## Instalação
+
+Após clonar esse repositório, execute os seguintes comandos no terminal:
 
 ```
-npx @marko/create marko-app --template basic
-cd marko-app
 npm install
 npm run dev
 ```
 
-## Overview
+## Atualizar Github
 
-This project is powered by [@marko/run](https://github.com/marko-js/run).
-
-- Run `npm run dev` to start the development server
-- Run `npm run build` to build a production-ready node.js server
-- Run `npm start` to run the production server
-
-## Adding Pages
-
-Pages map to the directory structure. You can add additional pages by creating files/directories under `src/routes` with `+page.marko` files.  Learn more in the [`@marko/run` docs](https://github.com/marko-js/run/#file-based-routing).
+- Execute `git add .` para preparar os arquivos modificados para o commit
+- Execute `git commit -m "MENSAGEM"` para adicionar os arquivos modificados a um commit
+- Execute `git push origin master` para enviar os arquivos commitados ao github
 
