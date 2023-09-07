@@ -1,10 +1,94 @@
+<script>
+    async function postLogin(){
+        var response = await fetch('https://mongoapi.adaptable.app/api/getAll');
+        var result = await response.json()
+        var usuario = document.getElementById('email')[0].value;
+        var senha = document.getElementById('password')[0].value;
+
+        if(usuario == 'bleble' && senha == 'bleble') {
+            alert("Login feito com sucesso");
+        }else{
+            alert("Dados incorretos, tente novamente")
+        }
+
+    }
+</script>
+
 <form action="">
-    <input type="email" name="email" placeholder="E-mail"/>
-    <input type="password" name="password" placeholder="Senha"/>
-    <a href="signup">
-        <button type="button">Criar Conta</button>
-    </a>
-        
-    
-    <button>Login</button>
+    <div class="main-content">
+        <div class="content-login">
+            <div class="login-form">
+                <div class="col-md-8">
+                    <div class="login-container">
+                        <h2 class="login-title text-center">Adopet.Me</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label form-control-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+      
+                            <div class="mb-3">
+                                <label for="password" class="form-label form-control-label">Senha</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+      
+                
+                            <div class="d-flex justify-content-between">
+                                <a href="signup">
+                                    <button type="button" class="btn btn-outline-secondary login-button">Cadastre-se</button>
+                                </a>
+                                <a href="dashboard">
+                                    <button type="button" class="btn btn-primary login-button" onclick="getLogin()">Login</button>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
+
+<style>
+     .login-container {
+      background-color: #ffff;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      margin: 0px auto;
+      max-width: 500px;
+    }
+
+    .login-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .form-control-label {
+      font-weight: bold;
+    }
+
+    .login-button {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .login-form{
+        display: grid;
+        place-items: center;
+        height: 100%;
+        margin: 0;
+    }
+
+    .main-content{
+        /*background: url(https://vetplus.vet.br/wp-content/uploads/2019/04/group-of-nine-dogs-picture-id857174584.jpg) no-repeat;*/
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+    .content-login{
+        background-color: rgba(255, 255, 255, .1);
+        backdrop-filter: blur(5px);
+        height: 100%;
+    }
+</style>
