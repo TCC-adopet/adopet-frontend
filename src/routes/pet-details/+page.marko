@@ -1,13 +1,55 @@
+<script>
+    async function getAnimal() {
+            var response = await fetch("http://localhost:8080/api/getAllAnimal");
+            var result = await response.json();
+            // pet name input
+            var inputPetName = document.getElementById('petName');
+            var nomeAnimal = result[0].nomeAnimal;
+            inputPetName.value = nomeAnimal;
+
+            // pet genre input
+            var inputPetGenre = document.getElementById('petGenre');
+            var sexo = result[0].sexo;
+            inputPetGenre.value = sexo;
+           
+           // pet race input
+            var inputPetRace = document.getElementById('petRace');
+            var race = result[0].tipoRaca
+            inputPetRace.value = race;
+                   
+    }
+    getAnimal()
+</script>
+
 <layout>
     <div class="container p-4">
         <div class="row justify-content-center">
             <div class="col-4">
-                <h4 id="petName">Nome: </h4> <br>
-                <h4 id="petGenre">Sexo: </h4> <br>
-                <h4 id="petAge">Idade: </h4> <br>
-                <h4 id="petType">Tipo: </h4> <br>
-                <h4 id="petRace">Raça: </h4> <br>
-                <h4 id="petCastration">Castração: </h4> <br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petName">Nome:</span>
+                    <input type="text" class="form-control" id="petName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petGenre">Sexo:</span>
+                    <input type="text" class="form-control" id="petGenre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petAge">Idade:</span>
+                    <input type="text" class="form-control" id="petAge" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petType">Tipo:</span>
+                    <input type="text" class="form-control" id="petType" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petRace">Raça:</span>
+                    <input type="text" class="form-control" id="petRace" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" for="petCastration">Castração:</span>
+                    <input type="text" class="form-control" id="petCastration" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+    
                 <div class="row justify-content-center">
                     <div class="col p-2">
                         <div class="d-grid gap-2 mx-auto">
