@@ -1,3 +1,22 @@
+<script>
+    function logar() {
+       var login = document.getElementById("email").value;
+       var senha = document.getElementById("password").value;
+
+       if(login == "admin00@gmail.com" && senha == "admin"){
+            alert("login feito com sucesso");
+       }else {
+        alert('Dados Incorretos!!')
+       }
+       
+    }
+
+
+
+
+</script>
+
+
 <form action="">
     <div class="main-content">
         <div class="content-login">
@@ -22,7 +41,7 @@
                                     <button type="button" class="btn btn-outline-secondary login-button">Cadastre-se</button>
                                 </a>
                                 <a href="dashboard">
-                                    <button type="button" class="btn btn-outline-primary login-button" onclick="getLogin()">Login</button>
+                                    <button type="button" class="btn btn-outline-primary login-button" onclick="logar()">Login</button>
                                 </a>
                             </div>
                         </form>
