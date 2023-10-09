@@ -1,12 +1,26 @@
+<script>
+    async function getOneAnimal() {
+        fetch('http://localhost:8080/api/getOneAnimal/652378f18206b10aa6f19fb6').then((response) => {
+            response.json()
+
+            .then(data => {
+                console.log(data)
+            })
+        })
+    }
+    getOneAnimal()
+</script>
+
+
 <layout>
     <div class="row">
         <div class="col-2 p-5">
                 <div class="d-grid gap-3">
-                    <button class="btn btn-outline-secondary">Macho</button>
-                    <button class="btn btn-outline-secondary" id="sexo">Femea</button>
-                    <button class="btn btn-outline-secondary">Adulto</button>
-                    <button class="btn btn-outline-secondary">Filhote</button>
-                    <button class="btn btn-outline-secondary">Castrado</button>
+                    <button class="btn btn-outline-warning filter-btn active" id="btn-sexo-macho">Macho</button>
+                    <button class="btn btn-outline-warning filter-btn" id="btn-sexo-femea">Femea</button>
+                    <button class="btn btn-outline-warning filter-btn" id="btn-idade-adulto">Adulto</button>
+                    <button class="btn btn-outline-warning filter-btn" id="btn-idade-filhote">Filhote</button>
+                    <button class="btn btn-outline-warning filter-btn" id="btn-castrado">Castrado</button>
                 </div>
         </div>
 

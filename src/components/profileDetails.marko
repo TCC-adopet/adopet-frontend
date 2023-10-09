@@ -1,3 +1,67 @@
+<script>
+    async function getOng() {
+        var response = await fetch("http://localhost:8080/api/getAllOng");
+        var result = await response.json();
+
+        // input instituite name
+        var inputInstituteName = document.getElementById('instituteName');
+        var instituiteName = result[0].NomeInstituicao;
+        inputInstituteName.value = instituiteName;
+        
+
+        // input director name
+        var inputDirectorName = document.getElementById('directorName');
+        var directorName = result[0].NomeDiretor;
+        inputDirectorName.value = directorName;
+
+        // input institute document
+        var inputInstituteDocument = document.getElementById('instituteDocument');
+        var instituteDocument = result[0].CNPJ;
+        inputInstituteDocument.value = instituteDocument;
+
+
+        // input institute address
+        var inputInstituteAddress = document.getElementById('instituteAddress');
+        var instituteAddress = result[0].Endereco;
+        inputInstituteAddress.value = instituteAddress;
+
+        // input institute address NUMBER
+        var inputInstituteAddressNumber = document.getElementById('instituteAddressNumber');
+        var instituteAddressNumber = result[0].Numero;
+        inputInstituteAddressNumber.value = instituteAddressNumber;
+
+        // input institute address number CEP
+        var inputInstituteAddressCEP = document.getElementById('instituteAddressNumberCep');
+        var instituteAddressNumberCep = result[0].CEP;
+        inputInstituteAddressCEP.value = instituteAddressNumberCep;
+
+        // input institute address complement
+        var inputInstituteAddressCOMPLEMENT = document.getElementById('instituteAddressComplement');
+        var instituteAddressComplement = result[0].Complemento;
+        inputInstituteAddressCOMPLEMENT.value = instituteAddressComplement;
+
+        // input institute telephone
+        var inputIntituteTelephone = document.getElementById('instituteTelephoneSignup');
+        var instituteFone = result[0].Telefone;
+        inputIntituteTelephone.value = instituteFone;
+
+        // input institute email
+        var inputInstituteEmail = document.getElementById('instituteEmailSignup');
+        var instituteEmail = result[0].Email;
+        inputInstituteEmail.value = instituteEmail;
+
+        // input institute password
+        var inputInstitutePassword = document.getElementById('institutePasswordSignup');
+        var instituitePassword = result[0].Senha;
+        inputInstitutePassword.value = instituitePassword;
+    }
+    getOng()
+</script>
+
+
+
+
+
 <div class="row">
     <div class="col-2 p-5">
         <div class="d-grid gap-3">
@@ -7,6 +71,11 @@
                 class="rounded float-start"
                 alt="Foto de Perfil"
             >
+            <p>
+                <a href="#" class="link-primary">
+                    Editar Foto de Perfil
+                </a>
+            </p>
             <p>
                 <a href="#" class="link-primary">
                     Informações
@@ -35,7 +104,7 @@
                             <div class="mb-3">
                                 <label
                                     for="instituteName"
-                                    class="form-label form-control-label"
+                                    class="form-label form-control-label" 
                                 >
                                     Nome da Instituição
                                 </label>
@@ -45,6 +114,7 @@
                                     id="instituteName"
                                     name="instituteName"
                                     required
+                                    disabled
                                 >
                             </div>
 
@@ -61,6 +131,7 @@
                                     id="directorName"
                                     name="directorName"
                                     required
+                                    disabled
                                 >
                             </div>
                         </div>
@@ -79,6 +150,7 @@
                                     id="instituteDocument"
                                     name="instituteDocument"
                                     required
+                                    disabled
                                 >
                             </div>
 
@@ -95,6 +167,7 @@
                                     id="instituteAddress"
                                     name="instituteAddress"
                                     required
+                                    disabled
                                 >
                             </div>
                         </div>
@@ -115,6 +188,7 @@
                                     id="instituteAddressNumber"
                                     name="instituteAddressNumber"
                                     required
+                                    disabled
                                 >
                             </div>
 
@@ -131,6 +205,7 @@
                                     id="instituteAddressComplement"
                                     name="instituteAddressNumberComplement"
                                     required
+                                    disabled
                                 >
                             </div>
                         </div>
@@ -149,6 +224,7 @@
                                     id="instituteAddressNumberCep"
                                     name="instituteAddressNumberCep"
                                     required
+                                    disabled
                                 >
                             </div>
 
@@ -165,6 +241,7 @@
                                     id="instituteTelephoneSignup"
                                     name="instituteTelephoneSignup"
                                     required
+                                    disabled
                                 >
                             </div>
                         </div>
@@ -185,6 +262,7 @@
                                     id="instituteEmailSignup"
                                     name="instituteEmailSignup"
                                     required
+                                    disabled
                                 >
                             </div>
 
@@ -201,6 +279,7 @@
                                     id="institutePasswordSignup"
                                     name="institutePasswordSignup"
                                     required
+                                    disabled
                                 >
                             </div>
                         </div>
@@ -210,7 +289,7 @@
                         <a href="dashboard">
                             <button
                                 type="button"
-                                class="btn btn-outline-secondary login-button"
+                                class="btn btn-warning login-button"
                             >
                                 Voltar
                             </button>

@@ -14,9 +14,25 @@
            
            // pet race input
             var inputPetRace = document.getElementById('petRace');
-            var race = result[0].tipoRaca
+            var race = result[0].tipoRaca;
             inputPetRace.value = race;
-                   
+
+            // pet castration input
+            var inputPetCastration = document.getElementById('petCastration');
+            var castration = result[0].Castracao;
+            inputPetCastration.value = castration;
+
+            // pet age input
+            var inputPetAge = document.getElementById('petAge');
+            var age = result[0].idade;
+            inputPetAge.value = age;
+
+            // pet Animal type
+            var inputAnimalType = document.getElementById('petType');
+            var petType = result[0].tipoAnimal;
+            inputAnimalType.value = petType;
+
+
     }
     getAnimal()
 </script>
@@ -35,11 +51,11 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default" for="petAge">Idade:</span>
-                    <input type="text" class="form-control" id="petAge" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control" id="petAge" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default" for="petType">Tipo:</span>
-                    <input type="text" class="form-control" id="petType" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control" id="petType" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default" for="petRace">Raça:</span>
@@ -47,7 +63,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default" for="petCastration">Castração:</span>
-                    <input type="text" class="form-control" id="petCastration" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control" id="petCastration" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
                 </div>
     
                 <div class="row justify-content-center">
