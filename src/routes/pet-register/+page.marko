@@ -1,3 +1,25 @@
+<script>
+    $(document).ready(function() {
+
+      $("#upload").change(function() {
+        var fileInput = this;
+        var imagePreview = $("#imagePreview")[0];
+
+        if (fileInput.files && fileInput.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            
+            imagePreview.innerHTML = '<img src="' + e.target.result + '" width="200">';
+          };
+
+          reader.readAsDataURL(fileInput.files[0]);
+        }
+      });
+    });
+
+
+</script>
 <layout>
     <div class="container p-4">
         <div class="row justify-content-center">
@@ -38,12 +60,11 @@
             <div class="col-2"></div>
 
             <div class="col-6">
-                <img src="https://w7.pngwing.com/pngs/509/597/png-transparent-picture-photo-camera-photography-image-gallery-media-instagram-icon-thumbnail.png" class="img-fluid" alt="...">
-                
+            <div id="imagePreview" class="img-fluid"></div>
                 <div class="row justify-content-center">
                     <div class="col p-4">
                         <div class="mb-2">
-                            <input class="form-control btn btn-outline-primary" type="file" id="formFile">
+                            <input class="form-control btn btn-outline-primary" type="file" id="upload">
                         </div>
                     </div>
                 </div>

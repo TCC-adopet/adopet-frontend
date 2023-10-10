@@ -1,42 +1,73 @@
-<script>
-    async function getOneAnimal() {
-        fetch('http://localhost:8080/api/getOneAnimal/652378f18206b10aa6f19fb6').then((response) => {
-            response.json()
-
-            .then(data => {
-                console.log(data)
-            })
-        })
+class {
+    onCreate() {
+        this.state = {
+            petData: []
+        };
     }
-    getOneAnimal()
-</script>
+
+    onMount() {
+        fetch("http://localhost:8080/api/getAllAnimal")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                this.setState("petData", data);
+            });
+    }
+}
+
+$ var petList = state.petData
+
 
 
 <layout>
     <div class="row">
         <div class="col-2 p-5">
-                <div class="d-grid gap-3">
-                    <button class="btn btn-outline-warning filter-btn active" id="btn-sexo-macho">Macho</button>
-                    <button class="btn btn-outline-warning filter-btn" id="btn-sexo-femea">Femea</button>
-                    <button class="btn btn-outline-warning filter-btn" id="btn-idade-adulto">Adulto</button>
-                    <button class="btn btn-outline-warning filter-btn" id="btn-idade-filhote">Filhote</button>
-                    <button class="btn btn-outline-warning filter-btn" id="btn-castrado">Castrado</button>
-                </div>
+            <div class="d-grid gap-3">
+                <button
+                    class="btn btn-outline-warning filter-btn active"
+                    id="btn-sexo-macho"
+                >
+                    Macho
+                </button>
+                <button
+                    class="btn btn-outline-warning filter-btn"
+                    id="btn-sexo-femea"
+                >
+                    Femea
+                </button>
+                <button
+                    class="btn btn-outline-warning filter-btn"
+                    id="btn-idade-adulto"
+                >
+                    Adulto
+                </button>
+                <button
+                    class="btn btn-outline-warning filter-btn"
+                    id="btn-idade-filhote"
+                >
+                    Filhote
+                </button>
+                <button
+                    class="btn btn-outline-warning filter-btn"
+                    id="btn-castrado"
+                >
+                    Castrado
+                </button>
+            </div>
         </div>
 
         <div class="col p-5">
             <div class="row">
-                <h2 class="m-0">Animais disponiveis para adoção</h2>
+                <h2 class="m-0">
+                    Animais disponiveis para adoção
+                </h2>
             </div>
-            <hr/>
+            <hr>
             <div class="row">
                 <div class="gap-5 d-flex flex-wrap">
-                    <card/>
-                    <card/>
-                    <card/>
-                    <card/>
-                    <card/>
-                    <card/>
+                    <for|petInfo| of=petList>
+                        <card id=petInfo._id pet=petInfo/>
+                    </for>
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 <div class="card" style="width: 18rem;">
     <img src="https://veja.abril.com.br/wp-content/uploads/2017/01/cao-labrador-3-copy.jpg" class="card-img-top text-center img-fluid" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Meg</h5>
-        <h6 class="card-subtitle mb-2"><a href="institute-details" class="link-primary" id="nameOng">Patinhas Caridosas</a></h6>
+        <h5 class="card-title">${input.pet.nomeAnimal}</h5>
+        <h6 class="card-subtitle mb-2"><a href="institute-details" class="link-primary" id="nameOng">${input.pet.idONG}</a></h6>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="petRace"></li>
-            <li class="list-group-item">Sexo: femea</li>
+            <li class="list-group-item" id="petRace">Raça: ${input.pet.tipoRaca}</li>
+            <li class="list-group-item">Sexo: ${input.pet.sexo}</li>
         </ul>
         <div class="card-body">
             <a href="pet-details" class="btn btn-primary">Ver Detalhes</a>
