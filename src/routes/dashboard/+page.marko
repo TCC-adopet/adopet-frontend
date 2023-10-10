@@ -6,7 +6,7 @@ class {
     }
 
     onMount() {
-        fetch("http://localhost:8080/api/getAllAnimal")
+        fetch("https://mongoapi.adaptable.app/api/getAllAnimal")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
