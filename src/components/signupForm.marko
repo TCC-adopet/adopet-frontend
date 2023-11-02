@@ -44,6 +44,37 @@ function maskcnpj(value){
     documentField.value = mask
 }
 
+document.getElementById("form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Impede o envio padrão do formulário
+
+  // Coletar os dados do formulário
+  var nome = document.getElementById("nome").value;
+  var email = document.getElementById("email").value;
+  var senha = document.getElementById("senha").value;
+
+  // Enviar os dados para o servidor usando uma requisição AJAX (usando a biblioteca Fetch)
+  fetch("/cadastrar-usuario", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ nome, email, senha })
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Processar a resposta do servidor
+    if (data.success) {
+      alert("Cadastro realizado com sucesso!");
+    } else {
+      alert("Erro ao cadastrar. Tente novamente.");
+    }
+  })
+  .catch(error => {
+    console.error("Erro na requisição: " + error);
+  });
+});
+
+
 </script>
 
 
